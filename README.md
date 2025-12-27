@@ -1,19 +1,49 @@
-# Water Arrow
+# Enhanced Arrows
 
-A simple datapack that adds craftable special craftable arrows.
+A simple datapack 12.1.11 that adds special craftable arrows, each with their own special on hit ground effect and trails!
 
 ## Arrows
 
-### Water
-Spawns water
+### 💧 Water
 
-## To build
+`water_arrow`
+Spawns a water source block where the arrow lands.
+Crafted using an arrow and a water bucket.
+
+---
+
+### 🔥 Lava
+
+`lava_arrow`
+Spawns a lava source block where the arrow lands.
+Crafted using an arrow and a lava bucket.
+
+### 🟢 Slime
+
+`slime_arrow`
+Creates a slime block where the arrow lands, launching entities that step on it.
+Crafted using an arrow and a slime block.
+
+### ⚡ Lightning
+
+`lightning_arrow`
+Summons a lightning strike at the arrow’s impact location.
+Crafted using an arrow and a lightning rod.
+
+## Todo's:
+
+- [] Add more arrows (Teleporting arrow, Redstone arrow)
+- [] Add hit detection not just on ground
+- [] Add a proper `pack.png`
+- [] Custom Art for each arrow
+
+## To build from Source
 
 `zip -r WaterArrow.zip data pack.mcmeta`
 
 ## To get in creative with commands
 
-`/give @a minecraft:arrow[minecraft:custom_data={water_arrow:1b}] 64`
+`/give @a minecraft:arrow[minecraft:custom_data={<arrow_type>:1b}] <quantity>`
 
 ## Credits
 
