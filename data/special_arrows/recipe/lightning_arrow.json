@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" L ", " A ", "   "],
+  "key": {
+    "L": "minecraft:lightning_rod",
+    "A": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Lightning Arrow",
+        "color": "yellow"
+      },
+      "minecraft:custom_data": {
+        "lightning_arrow": 1
+      }
+    }
+  }
+}
