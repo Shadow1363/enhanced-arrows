@@ -1,1 +1,0 @@
-execute as @e[type=minecraft:arrow,nbt={inGround:1b,item:{components:{"minecraft:custom_data":{water_arrow:1b}}}}] at @s run function water_arrow:place_water

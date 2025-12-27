@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" S ", " A ", "   "],
+  "key": {
+    "S": "minecraft:slime_block",
+    "A": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Slime Arrow",
+        "color": "green"
+      },
+      "minecraft:custom_data": {
+        "slime_arrow": 1
+      }
+    }
+  }
+}
