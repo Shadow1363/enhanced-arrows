@@ -10,8 +10,6 @@ A simple datapack 12.1.11 that adds special craftable arrows, each with their ow
 Spawns a water source block where the arrow lands.
 Crafted using an arrow and a water bucket.
 
----
-
 ### 🔥 Lava
 
 `lava_arrow`
