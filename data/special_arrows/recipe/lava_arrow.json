@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" L ", " A ", "   "],
+  "key": {
+    "L": "minecraft:lava_bucket",
+    "A": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Lava Arrow",
+        "color": "red"
+      },
+      "minecraft:custom_data": {
+        "lava_arrow": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" W ", " A ", "   "],
+  "key": {
+    "W": "minecraft:water_bucket",
+    "A": "minecraft:arrow"
+  },
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Water Arrow",
+        "color": "aqua"
+      },
+      "minecraft:custom_data": {
+        "water_arrow": 1
+      }
+    }
+  }
+}
