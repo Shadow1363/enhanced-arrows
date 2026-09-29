@@ -1,1 +1,0 @@
-particle minecraft:item_slime ~ ~ ~ 0.05 0.05 0.05 0 5 force
