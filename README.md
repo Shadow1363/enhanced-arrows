@@ -1,51 +1,59 @@
-# Enhanced Arrows
+# Data Pack Template
 
-A simple datapack 12.1.11 that adds special craftable arrows, each with their own special on hit ground effect and trails!
+A minimal, reusable starting point for Minecraft Java data packs targeting **1.21 through 26.3** (data pack formats 48–121).
 
-## Arrows
+## Using the template
 
-### 💧 Water
+1. Rename the namespace folder `data/template/` to your pack's namespace (lowercase, `a-z0-9_-.`).
+2. Replace every `template:` / `template.` reference with your namespace:
+   `grep -rl template data | xargs sed -i '' 's/template/<your_namespace>/g'`
+3. Edit `description` in `pack.mcmeta`, and add a 64×64 `pack.png` icon if you want one.
+4. Put setup in `load.mcfunction` and per-tick logic in `tick.mcfunction`.
 
-`water_arrow`
-Spawns a water source block where the arrow lands.
-Crafted using an arrow and a water bucket.
+## Layout
 
-### 🔥 Lava
+```
+pack.mcmeta                          Pack metadata and supported version range
+data/minecraft/tags/function/        load.json / tick.json hook your functions into the game
+data/template/function/              load.mcfunction, tick.mcfunction, and your own functions
+```
 
-`lava_arrow`
-Spawns a lava source block where the arrow lands.
-Crafted using an arrow and a lava bucket.
+Other content (recipes, advancements, loot tables, predicates, item modifiers, tags…) goes under `data/<namespace>/<type>/`. Since 1.21 these folder names are **singular** (`function`, `recipe`, `advancement`, `loot_table`, `predicate`…).
 
-### 🟢 Slime
+## Version range
 
-`slime_arrow`
-Creates a slime block where the arrow lands, launching entities that step on it.
-Crafted using an arrow and a slime block.
+`pack.mcmeta` declares the range twice on purpose:
 
-### ⚡ Lightning
+- `pack_format` + `supported_formats` — read by 1.21–1.21.8 (formats 48–81)
+- `min_format` + `max_format` — read by 1.21.9 and newer (formats 88.0+)
 
-`lightning_arrow`
-Summons a lightning strike at the arrow’s impact location.
-Crafted using an arrow and a lightning rod.
+| Version        | Format |
+| -------------- | ------ |
+| 1.21–1.21.1    | 48     |
+| 1.21.2–1.21.3  | 57     |
+| 1.21.4         | 61     |
+| 1.21.5         | 71     |
+| 1.21.6         | 80     |
+| 1.21.7–1.21.8  | 81     |
+| 1.21.9–1.21.10 | 88.0   |
+| 1.21.11        | 94.1   |
+| 26.1–26.1.2    | 101.1  |
+| 26.2           | 107.1  |
+| 26.3           | 121.0  |
 
-## Todo's:
+To narrow or extend the range, change all four values together. If a file's syntax differs between versions, put the version-specific copy in an [overlay](https://minecraft.wiki/w/Data_pack#Overlays) directory and list it under `overlays` in `pack.mcmeta`.
 
-- [ ] Add more arrows (Teleportation Arrow, Redstone Arrow)
-- [ ] Add hit detection (not just ground impact)
-- [ ] Add a proper `pack.png`
-- [ ] Create custom art for each arrow
-- [ ] Create a cover image for Modrinth and your website
+## Building
 
-## To build from Source
+```sh
+./build.sh            # -> <folder-name>.zip
+./build.sh MyPack     # -> MyPack.zip
+```
 
-`zip -r NameOfDataPack.zip data pack.mcmeta`
+Copy the zip into `<world>/datapacks/`, then run `/reload` in-game.
 
-## To get in creative with commands
+## Resources
 
-`/give @a minecraft:arrow[minecraft:custom_data={<arrow_type>:1b}] <quantity>`
-
-## Credits
-
-- https://misode.github.io/
-- https://minecraft.wiki/w/Function_(Java_Edition)
-- Debug Script: `/data get entity @e[type=arrow,limit=1,sort=nearest]`
+- https://misode.github.io/ — generators for pack JSON
+- https://minecraft.wiki/w/Data_pack
+- https://minecraft.wiki/w/Pack_format
